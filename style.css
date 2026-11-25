@@ -1,0 +1,447 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #202044;
+    background: #f3f4fb;
+}
+
+.strona-menu,
+.strona-gry {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 16px;
+}
+
+.menu {
+    width: 100%;
+    max-width: 440px;
+    text-align: center;
+}
+
+.logo {
+    font-size: 42px;
+    font-weight: bold;
+    color: #315edb;
+    letter-spacing: -5px;
+}
+
+.logo span,
+.logo-maly span {
+    color: #f08b39;
+}
+
+.nadtytul {
+    margin: 12px 0 7px;
+    color: #777d9b;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 30px;
+}
+
+.opis {
+    margin: 12px 0 24px;
+    color: #727793;
+    line-height: 1.5;
+}
+
+.karta-menu,
+.gra {
+    background: #ffffff;
+    border: 1px solid #e4e6f1;
+    border-radius: 18px;
+    box-shadow: 0 12px 35px rgba(35, 43, 89, 0.08);
+}
+
+.karta-menu {
+    padding: 25px;
+    text-align: left;
+}
+
+.karta-menu h2 {
+    margin: 0 0 15px;
+    font-size: 18px;
+}
+
+label {
+    display: block;
+    margin: 13px 0 7px;
+    color: #616784;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+input[type="text"] {
+    width: 100%;
+    height: 45px;
+    padding: 0 13px;
+    border: 1px solid #d8dbea;
+    border-radius: 8px;
+    outline: none;
+    font-size: 15px;
+}
+
+input[type="text"]:focus {
+    border-color: #315edb;
+    box-shadow: 0 0 0 3px rgba(49, 94, 219, 0.1);
+}
+
+.przycisk {
+    display: block;
+    width: 100%;
+    min-height: 45px;
+    margin-top: 14px;
+    padding: 12px 16px;
+    border: 0;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.przycisk-glowny {
+    color: white;
+    background: #3153c9;
+}
+
+.przycisk-glowny:hover {
+    background: #2444b4;
+}
+
+.przycisk-obrys {
+    color: #3153c9;
+    background: white;
+    border: 1px solid #3153c9;
+}
+
+.przycisk-obrys:hover {
+    background: #f2f5ff;
+}
+
+.separator {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 22px 0;
+    color: #9297ac;
+    font-size: 12px;
+}
+
+.separator::before,
+.separator::after {
+    content: "";
+    height: 1px;
+    flex: 1;
+    background: #e7e8f0;
+}
+
+.komunikat {
+    padding: 13px 16px;
+    border-radius: 9px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.komunikat.blad {
+    margin: 15px 0;
+    color: #9b2e2e;
+    background: #fff0f0;
+    border: 1px solid #ffd4d4;
+}
+
+.stopka-menu {
+    margin-top: 18px;
+    color: #878ca3;
+    font-size: 12px;
+}
+
+/* Wyglad okna gry */
+
+.strona-gry {
+    align-items: flex-start;
+}
+
+.gra {
+    width: 100%;
+    max-width: 590px;
+    padding: 24px;
+}
+
+.naglowek-gry {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 20px;
+}
+
+.naglowek-gry h1 {
+    font-size: 21px;
+}
+
+.naglowek-gry p {
+    margin: 5px 0 0;
+    color: #858aa2;
+    font-size: 12px;
+}
+
+.logo-maly {
+    color: #315edb;
+    font-size: 27px;
+    font-weight: bold;
+    letter-spacing: -4px;
+    text-decoration: none;
+}
+
+.link-menu {
+    margin-left: auto;
+    color: #626a8e;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.panel-kodu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 13px 15px;
+    background: #f5f6fc;
+    border: 1px solid #e8eaf4;
+    border-radius: 10px;
+}
+
+.etykieta {
+    display: block;
+    margin-bottom: 4px;
+    color: #898ea6;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.panel-kodu strong {
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+.przycisk-kopiuj {
+    padding: 8px 11px;
+    color: #3153c9;
+    background: white;
+    border: 1px solid #d9def2;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.status-info {
+    margin: 15px 0;
+    color: #294aa9;
+    background: #edf2ff;
+    text-align: center;
+    font-weight: bold;
+}
+
+.tablica-wyniku {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 17px 0;
+}
+
+.gracz {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    min-width: 0;
+    gap: 9px;
+    padding: 12px 9px;
+    background: #f7f8fc;
+    border: 1px solid #e9eaf2;
+    border-radius: 10px;
+}
+
+.gracz-prawy {
+    flex-direction: row;
+}
+
+.symbol {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    flex-shrink: 0;
+    background: white;
+    border-radius: 8px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.symbol-x,
+.pole.pole-x {
+    color: #3263d9;
+}
+
+.symbol-o,
+.pole.pole-o {
+    color: #eb8735;
+}
+
+.gracz div {
+    min-width: 0;
+}
+
+.gracz div strong {
+    display: block;
+    overflow: hidden;
+    max-width: 105px;
+    font-size: 13px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.opis-gracza {
+    display: block;
+    margin-top: 4px;
+    color: #969bb0;
+    font-size: 10px;
+}
+
+.wynik {
+    margin-left: auto;
+    font-size: 25px;
+}
+
+.separator-wyniku {
+    color: #9499ad;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.informacje-gry {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 2px 12px;
+    color: #8a8fa8;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.informacje-gry strong {
+    color: #353d69;
+}
+
+#informacjaKolej {
+    color: #394d9d;
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+.plansza {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    width: 100%;
+    max-width: 390px;
+    margin: 0 auto;
+}
+
+.pole {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1 / 1;
+    padding: 0;
+    color: #315edb;
+    background: #f8f9fd;
+    border: 1px solid #e2e5f0;
+    border-radius: 11px;
+    font-size: clamp(52px, 12vw, 84px);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.pole:disabled {
+    cursor: default;
+}
+
+.pole:not(:disabled):hover {
+    background: #edf1ff;
+    border-color: #aebce9;
+}
+
+.pole-wygrane {
+    background: #e5f7ec;
+    border-color: #78c996;
+}
+
+.panel-kolejnej-rundy {
+    margin-top: 18px;
+    text-align: center;
+}
+
+.panel-kolejnej-rundy p {
+    min-height: 18px;
+    margin: 0 0 10px;
+    color: #777e9a;
+    font-size: 13px;
+}
+
+.panel-kolejnej-rundy .przycisk {
+    max-width: 250px;
+    margin: 0 auto;
+}
+
+.przycisk:disabled {
+    opacity: 0.6;
+    cursor: default;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+.podpowiedz {
+    margin: 20px 0 0;
+    color: #9a9eb1;
+    font-size: 11px;
+    text-align: center;
+}
+
+@media (max-width: 480px) {
+    .gra {
+        padding: 17px;
+    }
+
+    .gracz {
+        gap: 6px;
+        padding: 9px 6px;
+    }
+
+    .symbol {
+        width: 29px;
+        height: 29px;
+        font-size: 20px;
+    }
+
+    .gracz div strong {
+        max-width: 75px;
+        font-size: 12px;
+    }
+
+    .wynik {
+        font-size: 21px;
+    }
+}

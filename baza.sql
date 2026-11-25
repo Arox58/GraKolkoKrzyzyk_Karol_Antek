@@ -1,0 +1,25 @@
+CREATE DATABASE IF NOT EXISTS kolko_i_krzyzyk_nowa
+CHARACTER SET utf8mb4
+COLLATE utf8mb4_unicode_ci;
+
+USE kolko_i_krzyzyk_nowa;
+
+CREATE TABLE IF NOT EXISTS pokoje (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    kod CHAR(6) NOT NULL UNIQUE,
+    gracz1 VARCHAR(20) NOT NULL,
+    gracz2 VARCHAR(20) DEFAULT NULL,
+    token1 CHAR(64) NOT NULL,
+    token2 CHAR(64) DEFAULT NULL,
+    plansza CHAR(9) NOT NULL DEFAULT '---------',
+    wynik1 INT NOT NULL DEFAULT 0,
+    wynik2 INT NOT NULL DEFAULT 0,
+    kolej TINYINT NOT NULL DEFAULT 1,
+    runda INT NOT NULL DEFAULT 1,
+    status VARCHAR(20) NOT NULL DEFAULT 'waiting',
+    zwyciezca TINYINT NOT NULL DEFAULT 0,
+    linia VARCHAR(20) NOT NULL DEFAULT '',
+    gotowy1 TINYINT NOT NULL DEFAULT 0,
+    gotowy2 TINYINT NOT NULL DEFAULT 0,
+    utworzono TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

@@ -1,0 +1,58 @@
+KÓŁKO I KRZYŻYK ONLINE - INSTRUKCJA URUCHOMIENIA (BAZA NAPRAWCZA)
+
+WYMAGANIA
+- XAMPP (Apache i MySQL)
+- PHP z włączonym rozszerzeniem PDO_MYSQL
+- Dwa komputery połączone z tą samą siecią lokalną, jeżeli gra ma działać na dwóch komputerach
+
+1. SKOPIUJ PLIKI
+Skopiuj cały folder "kolko-i-krzyzyk" do folderu:
+C:\xampp\htdocs\
+
+2. URUCHOM SERWER
+Otwórz XAMPP Control Panel i uruchom Apache oraz MySQL.
+
+3. UTWÓRZ BAZĘ DANYCH (TYLKO RAZ)
+Otwórz w przeglądarce:
+http://localhost/kolko-i-krzyzyk/instalacja.php
+Powinien pojawić się komunikat, że baza danych i tabela pokoje są gotowe.
+W tej wersji używana jest nowa baza "kolko_i_krzyzyk_nowa". Dzięki temu omijamy poprzednią, uszkodzoną tabelę w bazie "kolko_i_krzyzyk". Plik instalacja.php tworzy nową bazę i tabelę pokoje. Zwykła gra nie wykonuje już tych poleceń.
+
+Można też utworzyć bazę ręcznie przez phpMyAdmin, importując plik baza.sql.
+
+4. SPRAWDŹ USTAWIENIA MYSQL
+Domyślne ustawienia znajdują się w plikach db.php oraz instalacja.php:
+- host: 127.0.0.1
+- baza: kolko_i_krzyzyk_nowa
+- użytkownik: root
+- hasło: puste
+Jeśli MySQL ma inne hasło, zmień zmienną $haslo w obu plikach.
+
+5. OTWÓRZ GRĘ
+Na komputerze, na którym działa XAMPP, otwórz:
+http://localhost/kolko-i-krzyzyk/
+
+6. GRA NA DWÓCH KOMPUTERACH
+- Oba komputery muszą być w tej samej sieci lokalnej.
+- Na komputerze z XAMPP wpisz w wierszu poleceń: ipconfig
+- Odczytaj adres IPv4 karty sieciowej, np. 192.168.1.20.
+- Na drugim komputerze otwórz adres:
+  http://ADRES-IP-KOMPUTERA-Z-XAMPP/kolko-i-krzyzyk/
+- Jeśli strona nie otwiera się na drugim komputerze, zezwól na połączenia Apache w Zaporze systemu Windows.
+- Nie wpisuj na drugim komputerze adresu localhost, bo oznacza on ten drugi komputer.
+
+JAK ZAGRAĆ
+1. Pierwszy gracz wpisuje pseudonim i klika "Utwórz pokój".
+2. Przekazuje kod pokoju drugiemu graczowi.
+3. Drugi gracz wpisuje pseudonim i kod, a następnie klika "Dołącz do gry".
+4. Pierwszą rundę jako X rozpoczyna osoba, która utworzyła pokój.
+5. Gracze wykonują ruchy na zmianę. Po każdym ruchu stan gry zapisuje się w MySQL.
+6. Po zakończeniu rundy obaj gracze klikają "Następna runda". Przy remisie nikt nie otrzymuje punktu.
+7. Po zdobyciu trzech zwycięstw pojawia się wynik meczu. Obaj gracze mogą kliknąć "Zagraj ponownie".
+
+DODATKOWE INFORMACJE
+- Gra pobiera stan z serwera co 1 sekundę, więc ruch drugiego gracza pojawia się automatycznie.
+- Połączenie z bazą ma limit czasu; w razie problemu aplikacja wyświetli komunikat błędu.
+- Odświeżenie strony nie usuwa wyniku ani planszy. Gracz wraca do swojego pokoju dzięki sesji PHP.
+- Ruchy, kolej i punktacja są sprawdzane po stronie PHP.
+- Stare pokoje można usunąć w phpMyAdmin z tabeli "pokoje".
