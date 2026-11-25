@@ -54,5 +54,6 @@ $jestGra = !empty($_SESSION['kod_pokoju']) && !empty($_SESSION['token_gracza']);
         <p class="stopka-menu">Gra kończy się po zdobyciu 3 zwycięstw.</p>
         <p class="stopka-menu"><a href="instalacja.php">Pierwsza instalacja / naprawa bazy danych</a></p>
     </main>
+    <!-- Aktualizacja strony -->
 </body>
 </html>
